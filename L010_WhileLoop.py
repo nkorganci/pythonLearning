@@ -10,6 +10,7 @@ count = 1
 max_count = 4
 secret_word = "Harmony"
 guessed = False
+guess=""
 
 while count < max_count and not guessed:
     guess = input("Guess the secret word: ")
