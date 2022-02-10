@@ -4,19 +4,21 @@ while i < 10:
     print(i)
     i += 1
 
-# 2 secret word - guess
-secret_word = "secret"
-guess = ""
-guess_count = 1
-out_of_guess = False
+# 2 secret word - guess with limited try, write if you are looser or winner
 
-while guess != secret_word:
-    if guess_count <= 3:
-        guess = input("Enter the secret word: ")
-        guess_count += 1
-    else:
-        out_of_guess = True
-if out_of_guess:
-    print("Looser :)")
-else:
+count = 1
+max_count = 4
+secret_word = "Harmony"
+guessed = False
+
+while count < max_count and not guessed:
+    guess = input("Guess the secret word: ")
+    if secret_word == guess:
+        guessed = True
+    count += 1
+
+if guessed:
     print("Winner")
+else:
+    print("Looser")
+print("While loop has finished")
